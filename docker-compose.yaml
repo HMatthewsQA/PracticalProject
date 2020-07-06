@@ -1,0 +1,40 @@
+version: '3.7'
+services:
+	app1:
+		image: hmattthews/practicalproj-app1
+		build: ./app1
+		ports:
+			- 5000:5000
+		depends_on: 
+			- app2
+			- app3
+			- app4
+			- mysql
+	app2:
+		image: hmattthews/practicalproj-app2
+		build: ./app2
+		ports:
+			- 5001:5001
+	app3:
+		image: hmattthews/practicalproj-app3
+		build: ./app3
+		ports:
+			- 5002:5002
+	app4:
+		image: hmattthews/practicalproj-app4
+		build: ./app4
+		ports:
+			- 5003:5003
+	mysql:
+		image: mysql
+		ports:
+			- 3306:3306
+		environment: 
+			MYSQL_ROOT_PASSWORD: "root"
+			MYSQL_DATABASE: "tickets_db"
+		volume:
+			- type: volume
+			 source: tickets
+			 target: /var/lib/mysql
+volumes:
+	tickets: 
