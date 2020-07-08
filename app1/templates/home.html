@@ -3,7 +3,18 @@
 	
 <h1> Practical Project </h1>
 <br>
-<form method='GET' action="{{ url_for('home') }}">
+{% if tickets %}
+     {% for ticket in tickets %}
+        <div>
+            <h3>{{ ticket.letterstring }}</h3>
+			<h3>>{{ ticket.primeno }} </h3>
+			<span> <b>{{ ticket.win }}</b></span>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>There are no tickets</p>
+{% endif %}
+<form method='GET' action="{{ url_for('home/generate') }}">
     <button type="submit">Generate</button>
 </form>
 {% endblock %}
