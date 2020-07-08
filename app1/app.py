@@ -33,8 +33,8 @@ def home_generate():
 	else:
 		win=False
 	ticket = tickets(
-			letterstring=letterstring.text,
-			primeno=primeno.text,
+			letterstring=intletterstring.text,
+			primeno=int(primeno.text),
 			win=win
 		)
 	db.session.add(ticket)
