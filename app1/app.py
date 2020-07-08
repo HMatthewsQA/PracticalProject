@@ -30,15 +30,15 @@ def home_generate():
 	checkprime = requests.post('http://app4:5003/checkprime', data=primeno.text)
 	if checkstring.text == 'True' and checkprime.text == 'True':
 		win=True
-		ticket = tickets(
+	else:
+		win=False
+	ticket = tickets(
 			letterstring=letterstring.text,
 			primeno=primeno.text,
 			win=win
 		)
-		db.session.add(ticket)
-		db.session.commit()
-	else:
-		win=False
+	db.session.add(ticket)
+	db.session.commit()
 	return render_template('home.html', title='Home:',tickets=all_tickets)
 
 
