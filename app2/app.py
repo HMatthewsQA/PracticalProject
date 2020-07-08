@@ -6,12 +6,9 @@ import string
 app = Flask(__name__)
 
 @app.route('/letterstring', methods=['GET'])
-def string():
-	counter=0
-	letterstring = ''
-	while counter > 7:
-		letterstring = letterstring + random.choice(string.ascii_letters)
-		counter+=1
+def letterstring():
+	letters = string.ascii_lowercase
+	letterstring = ''.join(random.choice(letters) for i in range(7))
 	return Response(letterstring, mimetype='text/plain')
 
 if __name__ == '__main__':
