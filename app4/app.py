@@ -1,10 +1,10 @@
-from flask import render_template, redirect, url_for, request, Response
+from flask import Flask, render_template, redirect, url_for, request, Response
 import requests
 import random
 
 app = Flask(__name__)
 
-@app.route('/checkstring', methods='POST')
+@app.route('/checkstring', methods=['POST'])
 def checkstring():
 	result=False
 	checkstring = request.data.decode('utf-8')
@@ -16,7 +16,7 @@ def checkstring():
 		result=False
 	return Response(result, mimetype='text/plain')
 
-@app.route('/checkprime', methods='POST')
+@app.route('/checkprime', methods=['POST'])
 def checkprime():
 	num = request.data.decode('utf-8')
 	isprime = False
@@ -32,4 +32,4 @@ def checkprime():
 	return Response(isprime, mimetype='text/plain')
 
 if __name__ == '__main__':
- app.run(debug=True, host='0.0.0.0')
+ app.run(debug=True, host='0.0.0.0', port=5003)

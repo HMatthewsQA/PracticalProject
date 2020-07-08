@@ -14,7 +14,7 @@
 {% else %}
     <p>There are no tickets</p>
 {% endif %}
-<form method='GET' action="{{ url_for('home/generate') }}">
+<form method='GET' action="{{ url_for('home_generate') }}">
     <button type="submit">Generate</button>
 </form>
 {% endblock %}
