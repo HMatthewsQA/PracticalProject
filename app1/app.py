@@ -21,7 +21,7 @@ class tickets(db.Model):
 def home():
 	return render_template('home.html', title='Home:')
 
-@app.route('/home/generate')
+@app.route('/home/generate', methods=['GET', 'POST'])
 def home_generate():
 	all_tickets=tickets.query.all()
 	letterstring = requests.get('http://app2:5001/letterstring')
@@ -30,15 +30,15 @@ def home_generate():
 	checkprime = requests.post('http://app4:5003/checkprime', data=primeno.text)
 	if checkstring.text == 'True' and checkprime.text == 'True':
 		win=True
-		ticket = tickets(
+	else:
+		win=False
+	ticket = tickets(
 			letterstring=letterstring.text,
 			primeno=int(float(primeno.text)),
 			win=win
 		)
-		db.session.add(ticket)
-		db.session.commit()
-	else:
-		win=False
+	db.session.add(ticket)
+	db.session.commit()
 	return render_template('home.html', title='Home:',tickets=all_tickets)
 
 
