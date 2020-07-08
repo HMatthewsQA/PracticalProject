@@ -18,7 +18,7 @@ def checkstring():
 
 @app.route('/checkprime', methods=['POST'])
 def checkprime():
-	num = request.data.decode('utf-8')
+	num = int(request.data.decode('utf-8'))
 	isprime = False
 	if num > 1:
 		for i in range(2,num):
