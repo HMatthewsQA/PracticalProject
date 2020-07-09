@@ -13,21 +13,29 @@ services:
     - app3
     - app4
     - mysql
+    deploy:
+      replicas: 3
   app2:
     image: hmattthews/practicalproj-app2
     build: ./app2
     ports:
     - 5001:5001
+    deploy:
+      replicas: 3
   app3:
     image: hmattthews/practicalproj-app3
     build: ./app3
     ports:
     - 5002:5002
+    deploy:
+      replicas: 3
   app4:
     image: hmattthews/practicalproj-app4
     build: ./app4
     ports:
     - 5003:5003
+    deploy:
+      replicas: 3
   mysql:
     image: mysql
     ports:
