@@ -13,11 +13,11 @@ class TestGenerate(TestBase):
 	def test_generate(self):
 		with patch ('requests.get') as s:
 			s.return_value = "abcdefg"
-			with patch ('request.get') as p:
+			with patch ('requests.get') as p:
 				p.return_value = "3"
-				with patch ('request.post') as sp:
+				with patch ('requests.post') as sp:
 					sp.return_value = "True"
-					with patch ('request.post') as pp:
+					with patch ('requests.post') as pp:
 						pp.return_value = "True"
 				response = self.client.get('/home/generate')
 				self.assertIn(b'True', response.data)
