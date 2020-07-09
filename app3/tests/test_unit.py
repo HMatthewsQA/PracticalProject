@@ -11,5 +11,6 @@ class TestBase(TestCase):
 
 class TestApiCalls(TestBase):
 	def test_primeno(self):
-		response = self.client.get('/primeno')
-		self.assertIn(, response.data)
+		for i in range(20):
+			response = self.client.get('/primeno')
+			self.assertIs(type(response.data.decode('utf-8')), str)

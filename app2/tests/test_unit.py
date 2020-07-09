@@ -13,4 +13,4 @@ class TestApiCalls(TestBase):
 	def test_letterstring(self):
 		for i in range(20):
 			response = self.client.get('/letterstring')
-			self.assertIs(type(response.data), str)
+			self.assertIs(type(response.data.decode('utf-8')), str)
