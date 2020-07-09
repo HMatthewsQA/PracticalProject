@@ -10,3 +10,9 @@
   add_host:
     name: "token"
     value: "{{ swarm_info['swarm_facts']['JoinTokens']['Worker'] }}"
+- name: "Deploy stack from a compose file"
+  docker_stack:
+    state: present
+    name: mystack
+    compose:
+      - ~/docker-compose.yaml
