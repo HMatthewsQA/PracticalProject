@@ -1,5 +1,5 @@
 [managers]
-manager ansible_host=
+manager ansible_host=10.154.0.25
 
 [managers:vars}
 ansible_user=hmatthews
@@ -7,7 +7,7 @@ ansible_ssh_common_args='-o StrictHostKeyChecking=no'
 ansible_ssh_private_key_file=~/.ssh/id_rsa
 
 [workers]
-worker-1 ansible_host=
+worker-1 ansible_host=10.154.0.26 
 
 [workers:vars}
 ansible_user=hmatthews
