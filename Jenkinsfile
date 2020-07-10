@@ -27,5 +27,10 @@ pipeline{
 					sh "bash Jenkins/ansible.sh"
 				}
 			}
+			stage('Deploy Stack'){
+				steps{
+					sh "bash Jenkins/stack.sh"
+				}
+			}
 		}    
 }
