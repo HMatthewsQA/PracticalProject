@@ -1,3 +1,2 @@
 #!/bin/bash
-cd PracticalProject
-ansible-playbook playbook.yaml
+/home/jenkins/.local/bin/ansible-playbook -i ansible/inventory ansible/playbook.yaml
