@@ -1,0 +1,2 @@
+cd PracticalProject
+ansible-playbook playbook.yaml
