@@ -19,7 +19,7 @@ pipeline{
 			}
 			stage('Build Images and Push'){
 				steps{
-					sh "Jenkins/docker.sh"
+					sh "bash Jenkins/docker.sh"
 				}
 			}
 			stage('Deploy Ansible'){
