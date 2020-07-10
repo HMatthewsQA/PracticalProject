@@ -20,4 +20,4 @@ class TestGenerate(TestBase):
 					with patch ('requests.post') as pp:
 						pp.return_value = "True"
 						response = self.client.get('/home/generate')
-						self.assertEqual(win, True)
+						self.assertEqual(response.win, True)
