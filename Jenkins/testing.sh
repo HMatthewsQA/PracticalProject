@@ -2,7 +2,6 @@
 sudo apt update -y
 sudo apt install python3-pip python3-venv -y
 
-cd PracticalProject
 python3 -m venv vevnv
 . venv/bin/activate
 pip3 install flask flask-testing pytest pytest-cov requests Werkzeug==0.16.1 flask_sqlalchemy
