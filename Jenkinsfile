@@ -8,10 +8,10 @@ pipeline{
 			}
 			stage('Testing'){
 				steps{
-					sh "cd PracticalProject/tree/development/app1 && pytest"
-					sh "cd PracticalProject/tree/development/app2 && pytest"
-					sh "cd PracticalProject/tree/development/app3 && pytest"
-					sh "cd PracticalProject/tree/development/app4 && pytest"
+					sh "cd PracticalProject/app1 && pytest"
+					sh "cd PracticalProject/app2 && pytest"
+					sh "cd PracticalProject/app3 && pytest"
+					sh "cd PracticalProject/app4 && pytest"
 				}
 			}
 			stage('Install Docker'){
@@ -25,13 +25,13 @@ pipeline{
 			}
 			stage('Build Images and Push'){
 				steps{
-					sh "docker-compose build"
-					sh "docker-compose push"
+					sh "cd PracticalProject && docker-compose build"
+					sh "cd PracticalProject && docker-compose push"
 				}
 			}
 			stage('Deploy Ansible'){
 				steps{
-					sh "cd PracticalProject/tree/development && ansible-playbook playbook.yaml"
+					sh "cd PracticalProject && ansible-playbook playbook.yaml"
 				}
 			}
 		}    
