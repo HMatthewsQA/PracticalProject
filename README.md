@@ -41,14 +41,30 @@ For services #2, #3 and #4 you need to create 2 different implementations, you m
 
 ### Database Structure
 
+The database in this project has a very simple structure as there is only one table required to use the service. Therefore there are no relationships to model.
 
+![ERD][erd]
 
 ### CI Pipeline
+
+Below is a diagram to demonstrate the Continous Integration Pipeline that was used to operate and deploy this project.
+
 
 ![CI][ci]
 
 
+
+Here is an image that displays my jenkins pipeline process
+
+![Jenkins][jenkins]
+
+The progress of this pipeline can be seen inside the documents folder.
+
+Jenkins logs
+
 ## Project Tracking
+
+A Trello board was used to manage project development. Below is an image of this board towards the end of development. The progress of this board can be seen inside the documents folder.
 
 ![Trello][trello]
 
@@ -64,6 +80,6 @@ For services #2, #3 and #4 you need to create 2 different implementations, you m
 
 Harry Matthews
 
-[trello]: https://github.com/HMatthewsQA/PracticalProject/blob/development/Documents/Trello/Trello2.png?raw=true "Trello Board"
-
+[trello]: https://github.com/HMatthewsQA/PracticalProject/blob/development/Documents/Trello/Trello3.png?raw=true "Trello Board"
+[jenkins]:https://github.com/HMatthewsQA/PracticalProject/blob/development/Documents/Jenkins/JenkinsPipeline3.png?raw=true "Jenkins Pipeline"
 [ci]: https://github.com/HMatthewsQA/PracticalProject/blob/development/Documents/CIPipeline.png?raw=true "CI Pipeline"
