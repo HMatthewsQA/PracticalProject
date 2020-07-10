@@ -5,4 +5,11 @@ sudo curl -L 'https://github.com/docker/compose/releases/download/${version}/doc
 sudo chmod +x /usr/local/bin/docker-compose
 sudo apt-get install python-pip -y
 sudo apt-get install python3-pip -y
-cd PracticalProject/app1 && pip install -r requirements.txt
+pip install pytest
+pip install pytest-cov
+pip install requests
+pip install flask
+pip install flask_sqlalchemy
+pip install flask_wtf
+pip install pymysql[rsa]
+pip install Werkzeug
