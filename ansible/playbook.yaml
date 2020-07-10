@@ -10,7 +10,3 @@
   become: yes
   roles:
   - worker
-- hosts: managers
-  become: yes
-  roles:
-  - deploy
