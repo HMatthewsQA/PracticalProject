@@ -19,5 +19,7 @@ class TestGenerate(TestBase):
 					sp.return_value = "True"
 					with patch ('requests.post') as pp:
 						pp.return_value = "True"
-				response = self.client.get('/home/generate')
-				self.assertIn(b'True', response.data)
+						with app.test_request_context('/home/generate'):
+							assert flask.request.args['win'] == 'True'
+				##response = self.client.get('/home/generate')
+				##self.assertIn(b'True', response.data)
