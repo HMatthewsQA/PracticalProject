@@ -19,8 +19,5 @@ class TestGenerate(TestBase):
 					sp.return_value = "True"
 					with patch ('requests.post') as pp:
 						pp.return_value = "True"
-						with app.test_client() as c:
-							rv = c.get('/home/generate')
-							assert flask.session['win'] == True
-				##response = self.client.get('/home/generate')
-				##self.assertIn(b'True', response.data)
+						response = self.client.get('/home/generate')
+						self.assertEqual(win, True)
