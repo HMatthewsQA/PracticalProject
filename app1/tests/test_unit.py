@@ -9,6 +9,11 @@ class TestBase(TestCase):
 	def create_app(self):
 		return app
 
+class Testhome(TestBase):
+	def test_homepage_view(self):
+		response = self.client.get(url_for('home'))
+		self.assertEqual(response.status_code, 200)
+
 class TestGenerate(TestBase):
 	def test_generate(self):
 		with patch ('requests.get') as s:
@@ -22,7 +27,4 @@ class TestGenerate(TestBase):
 						response = self.client.get('/home/generate')
 						self.assertEqual(response.win, True)
 
-class Testhome(TestBase):
-	def test_homepage_view(self):
-		response = self.client.get(url_for('home'))
-		self.assertEqual(response.status_code, 200)
+
