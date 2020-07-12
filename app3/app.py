@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/primeno', methods=['GET'])
 def primeno():
-	primeno = str(random.randint(0,10))
+	primeno = str(random.randint(0,20))
 	return Response(primeno, mimetype='text/plain')
 
 if __name__ == '__main__':

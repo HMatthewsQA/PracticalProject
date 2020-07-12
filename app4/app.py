@@ -8,7 +8,7 @@ app = Flask(__name__)
 def checkstring():
 	result='False'
 	checkstring = request.data.decode('utf-8')
-	if (checkstring.find('A') != -1): 
+	if (checkstring.find('b') != -1): 
 		result='True'
 	elif (checkstring.find('a') != -1): 
 		result='True'
