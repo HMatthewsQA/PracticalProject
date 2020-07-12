@@ -23,7 +23,6 @@ class TestGenerate(TestBase):
 						self.assertEqual(response.win, True)
 
 class Testhome(TestBase):
-	def test_home(self):
-		with app.test_client() as c:
-			response = c.get('/home')
-			self.assertEquals(response.status_code, 200)
+	def test_homepage_view(self):
+		response = self.client.get(url_for('home'))
+		self.assertEqual(response.status_code, 200)
