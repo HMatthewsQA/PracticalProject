@@ -37,7 +37,7 @@ services:
     deploy:
       replicas: 3
   mysql:
-    image: mysql
+    image: hmatthews/practicalproj-mysql
     build: ./db
     ports:
     - 3306:3306
