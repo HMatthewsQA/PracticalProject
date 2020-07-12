@@ -32,10 +32,11 @@ For services #2, #3 and #4 you need to create 2 different implementations, you m
 * Ansible Configuration Management
 * Docker swarm
 * Feature Branch version control
+* 2nd Implementation
 
 ### My approach
 
-
+My approach to this project was quite direct and to the point. First I made sure I had a working flask application with the four services that were required with docker compose. Once I had done this I moved onto testing the application and the functions that it entails. Next was getting Jenkins setup so I could begin automating the deployment process and my pipeline. Once I had Jenkins operational I began the process of designing and implementing a working Pipeline job that was initialised by a webhook from my GitHub Repository. Upon recieving this, I then implemented the required steps in my pipeline to rigorously test, initialise and deploy my service using the industry tools set out in our requirements. Now that my service was functioning I could make use of an NGINX service to robustly protect our network using a HTTP reverse proxy configuration. All of these steps compose a completed service that operates funcitonally with automation, configuation management and containerisation within a stack as set out in the brief and requirements.
 
 ## Architecture
 
@@ -45,22 +46,25 @@ The database in this project has a very simple structure as there is only one ta
 
 ![ERD][erd]
 
+Above is a model of the table that was used to store and collect data for the services that composed the flask web app.
+
 ### CI Pipeline
 
-Below is a diagram to demonstrate the Continous Integration Pipeline that was used to operate and deploy this project.
-
+Below is initial early concept diagram for the Continous Integration (CI) Pipeline that was used to operate and deploy this project.
 
 ![CI][ci]
 
+Upon revision and development the CI pipeline became more fleshed out and thorough in its design. This new design can be seen in the more detailed image below.
 
+![CI2][ci2]
 
-Here is an image that displays my jenkins pipeline process
+Here is an image that displays my Jenkins pipeline process and the numerous stages that it undertakes in order to make sure that the service is deployed appropriately and functionally.
 
 ![Jenkins][jenkins]
 
-The progress of this pipeline can be seen inside the documents folder.
+During the design and implemation stage of the Jenkins process this pipeline underwent many developments, the progress of which can be seen inside the documents folder of this repository.
 
-Jenkins logs
+The logs of this pipeline job within Jenkins can also be used to view the processes and their results, including the outcome the of the pytest testing that is a part of the job.
 
 ## Project Tracking
 
@@ -70,16 +74,41 @@ A Trello board was used to manage project development. Below is an image of this
 
 ## Risk Assessment
 
+
+![RiskAssessment][riskassessment]
+
+I have completed a risk assessment to help me understand the ways that my application and its resources might come under threat and how I can plan to mitigate or prevent these circumstances.
+
 ## Testing
+
+In order to make sure our services are fuctional and working as intended I have written some tests. The outcomes of these tests can be seen below.
+
+![Test1][test1]
+![Test2][test2]
+![Test3][test3]
+![Test4][test4]
+
+Unfortunately I was unable to correctly implement testing for service 1 as this would make use of a database just for this purpose and due to time constraints I had to focus on more pressing areas of the project development. Otherwise, testing worked as intended and a good coverage was achieved for our services
 
 ## Known Issues
 
+Now that the Project has reached the end of its path the most prominent issue remaining is the lack of functional testing for service one working around the database element.
+
 ## Future Improvements
+
+If I had more time to develop this project I would like to fix the issue with the testing of the first service as well as try to reach 100% coverage. Other than this, It would be nice to be able to spend a little time making the front end of the application more user friendly and implement a more appealing design for users.
 
 ## Authors
 
 Harry Matthews
 
+[test1]: https://github.com/HMatthewsQA/PracticalProject/blob/development/Documents/Testing/app1cov.png?raw=true "app1 coverage"
+[test2]: https://github.com/HMatthewsQA/PracticalProject/blob/development/Documents/Testing/app2cov.png?raw=true "app2 coverage"
+[test3]: https://github.com/HMatthewsQA/PracticalProject/blob/development/Documents/Testing/app3cov.png?raw=true "app3 coverage"
+[test4]: https://github.com/HMatthewsQA/PracticalProject/blob/development/Documents/Testing/app4cov.png?raw=true "app4 coverage"
+[riskassessment]: https://github.com/HMatthewsQA/PracticalProject/blob/development/Documents/RiskAssessment.png?raw=true "Risk Assessment"
+[erd]: https://github.com/HMatthewsQA/PracticalProject/blob/development/Documents/ERD/PPerd.png?raw=true "ERD"
 [trello]: https://github.com/HMatthewsQA/PracticalProject/blob/development/Documents/Trello/Trello3.png?raw=true "Trello Board"
 [jenkins]:https://github.com/HMatthewsQA/PracticalProject/blob/development/Documents/Jenkins/JenkinsPipeline3.png?raw=true "Jenkins Pipeline"
 [ci]: https://github.com/HMatthewsQA/PracticalProject/blob/development/Documents/CIPipeline.png?raw=true "CI Pipeline"
+[ci2]: https://github.com/HMatthewsQA/PracticalProject/blob/development/Documents/CIPipeline2.png?raw=true "CI Pipeline"
