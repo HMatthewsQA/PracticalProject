@@ -19,6 +19,7 @@ class tickets(db.Model):
 @app.route('/')
 @app.route('/home')
 def home():
+	all_tickets=tickets.query.all()
 	return render_template('home.html', title='Home:')
 
 @app.route('/home/generate', methods=['GET', 'POST'])

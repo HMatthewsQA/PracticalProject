@@ -21,3 +21,9 @@ class TestGenerate(TestBase):
 						pp.return_value = "True"
 						response = self.client.get('/home/generate')
 						self.assertEqual(response.win, True)
+
+class Testhome(TestBase):
+	def test_home(self):
+		with app.test_client() as c:
+			response = c.get('/home')
+			self.assertEquals(response.status_code, 200)
