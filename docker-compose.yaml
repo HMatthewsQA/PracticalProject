@@ -38,10 +38,11 @@ services:
       replicas: 3
   mysql:
     image: mysql
+    build: ./db
     ports:
     - 3306:3306
     environment: 
-      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_ROOT_PASSWORD: ${DB_PASS}
       MYSQL_DATABASE: "tickets_db"
     volumes:
     - type: volume
