@@ -81,14 +81,31 @@ I have completed a risk assessment to help me understand the ways that my applic
 
 ## Testing
 
+In order to make sure our services are fuctional and working as intended I have written some tests. The outcomes of these tests can be seen below.
+
+![Test1][test1]
+![Test2][test2]
+![Test3][test3]
+![Test4][test4]
+
+Unfortunately I was unable to correctly implement testing for service 1 as this would make use of a database just for this purpose and due to time constraints I had to focus on more pressing areas of the project development. Otherwise, testing worked as intended and a good coverage was achieved for our services
+
 ## Known Issues
 
+Now that the Project has reached the end of its path the most prominent issue remaining is the lack of functional testing for service one working around the database element.
+
 ## Future Improvements
+
+If I had more time to develop this project I would like to fix the issue with the testing of the first service as well as try to reach 100% coverage. Other than this, It would be nice to be able to spend a little time making the front end of the application more user friendly and implement a more appealing design for users.
 
 ## Authors
 
 Harry Matthews
 
+[test1]: https://github.com/HMatthewsQA/PracticalProject/blob/development/Documents/Testing/app1cov.png?raw=true "app1 coverage"
+[test2]: https://github.com/HMatthewsQA/PracticalProject/blob/development/Documents/Testing/app2cov.png?raw=true "app2 coverage"
+[test3]: https://github.com/HMatthewsQA/PracticalProject/blob/development/Documents/Testing/app3cov.png?raw=true "app3 coverage"
+[test4]: https://github.com/HMatthewsQA/PracticalProject/blob/development/Documents/Testing/app4cov.png?raw=true "app4 coverage"
 [riskassessment]: https://github.com/HMatthewsQA/PracticalProject/blob/development/Documents/RiskAssessment.png?raw=true "Risk Assessment"
 [erd]: https://github.com/HMatthewsQA/PracticalProject/blob/development/Documents/ERD/PPerd.png?raw=true "ERD"
 [trello]: https://github.com/HMatthewsQA/PracticalProject/blob/development/Documents/Trello/Trello3.png?raw=true "Trello Board"
