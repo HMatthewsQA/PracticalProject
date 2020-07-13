@@ -6,9 +6,9 @@
 {% if tickets %}
      {% for ticket in tickets %}
         <div>
-            <span> <b>{{ ticket.letterstring }}</b></span>
-			<span> <b>{{ ticket.primeno }}</b></span>
-			<span> <b>{{ ticket.win }}</b></span>
+            <span> <p style="color:red">{{ ticket.letterstring }}</p></span>
+			<span> <p style="color:red">{{ ticket.primeno }}</p></span>
+			<span> <p style="color:red">{{ ticket.win }}</p></span>
         </div>
     {% endfor %}
 {% else %}
